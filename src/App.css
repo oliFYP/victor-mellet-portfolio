@@ -1,8 +1,17 @@
+
+body {
+  height: 100vh;
+  width: auto;
+  background: linear-gradient(45deg, rgb(0, 0, 0), rgb(85, 85, 85));
+ 
+ 
+}
 .layout{
     max-width: 100%;
+    max-height: 100%;
   font-family: Arial;
   padding: 20px;
-  background: linear-gradient(to bottom, rgb(0, 0, 0), rgb(85, 85, 85));
+  
   align-items: center;
   justify-items: center;
   display: flex;
@@ -50,14 +59,7 @@
     align-items: center;
     text-align: left;
 }
-.container-1 p{
-   color: hsl(210, 50%, 25%);
-   font-size: larger;
-}
-.container-1 h1{
-    color: hsl(210, 50%, 25%);
-   font-size: xx-large;
-}
+
 
 .location-icon, 
 .Phone-icon, 
@@ -66,7 +68,7 @@
 .Birthday-icon {
     margin-top: 3px;
     margin-right: 5px;
-    color: hsl(210, 50%, 25%);
+    color: #3a3a3a;
     height: 25px;
     width: auto;
 }
@@ -74,11 +76,7 @@
 .location-container, 
 .email-container, 
 .car-container, 
-.Birthday-container, 
-.Graduation-container, 
-.Briefcase-container, 
-.mech-container, 
-.book-container{
+.Birthday-container{
     display: flex;
     align-items: center;
     text-align: center;
@@ -96,24 +94,99 @@
     align-items: center;
 }
 
-.Graduation-container, .Briefcase-container, .mech-container, .book-container{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    width: 450px;
-    height: 350px;
-    border-radius: 20px;
-    background-color: white;
-    justify-content: center;
-    align-items: center;
-    
-    margin: 20px;
-    cursor: pointer;
-    transform-style: preserve-3d;
-    transition: transform 0.5s;
+
+
+
+.container, 
+.container1, 
+.container2, 
+.container3 {
+  width: 450px;
+  height: 350px;
+  padding: 10px;
+  perspective: 800px;
 }
 
+.container.flipped .card,
+.container1.flipped .card,
+.container2.flipped .card,
+.container3.flipped .card{
+  transform: rotateY(180deg);
+  cursor: pointer;
+}
 
+.card {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  transition: transform 1500ms;
+  transform-style: preserve-3d;
+}
+
+.front,
+.back {
+  height: 100%;
+  width: 100%;
+  border-radius: 2rem;
+  box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.25);
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.front {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  
+}
+.front h1{
+  color: linear-gradient(45deg, rgb(0, 0, 0), rgb(85, 85, 85));;
+  font-size: x-large;
+  font-weight: 700;
+  margin: 10px;
+}
+
+.mec-icon{
+  margin-top: 3px;
+  margin-right: 5px;
+  color: #3a3a3a;
+  height: auto;
+  width: 50px;
+  align-items: center;
+}
+.back {
+  background-color:  #3a3a3a;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  color: white;
+
+}
+.back h1{
+  margin-top: 20px; 
+  margin-bottom: 5px; 
+  margin-left: 10px;
+  font-size:medium;
+}
+.back h2{
+  margin-top: 5px;
+  margin-left: 10px;
+  font-size: large;
+}
+.back li{
+  margin-top: 15px;
+  margin-left: 20px;
+  font-size:medium;
+}
+.back p{
+  margin-top: 5px;
+  margin-left: 20px;
+  font-size:medium;
+}
 .graduation-icon, .Briefcase-icon{
     margin-top: 3px;
     margin-right: 20px;
@@ -122,92 +195,5 @@
     width: auto;
     
 }
-.container-1-2 h1{
-    color: hsl(210, 50%, 25%);
-}
- .stage{
-    
-   display: none;
-}
-.scolaire{
-
-    display: none;
-  
-}
-.scolaire.fullscreen,.stage.fullscreen {
-    position: fixed;
-    top: 20%;
-    left:0;
-    width:100%;
-    height: auto;
-    z-index: 9999;
-    border-radius: 20px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    display:block;
-    transform: scale(0.5) translateY(-100%);
-  animation: bounceIn 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
-
-    background-color: hsl(210, 50%, 25%);
-  
-  }
-
-  .exit-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    padding: 20px;
-    border-radius: 20px;
-    border-color: #fff;
-    font-size: large;
-    background-color: hsl(210, 50%, 25%);
-    color: #fff;
-    cursor: pointer;
-  }
-  
-  
-.scolaire.fullscreen h1, .stage.fullscreen h1{
-    color: white;
-    margin-top: 20px;
-    margin-left: 40px;
-    font-size: larger;
-    margin-bottom: 0px;
-}
-.scolaire.fullscreen h2, .stage.fullscreen h2{
-    color: white;
-    margin-left: 40px;
-    font-size: larger;
-    margin-bottom: 0px;
-}
-.scolaire.fullscreen li, .stage.fullscreen p{
-    color: white;
-    margin-top: 10px;
-    margin-left: 45px;
-    margin-right: 45px;
-    margin-bottom: 20px;
-}
-
-.container-2-2 p{
-    color: white;
-    margin-top: 10px;
-    margin-left: 45px;
-    margin-right: 45px;
-    
-}
 
 
-  
-  @keyframes bounceIn {
-    0% {
-      transform: scale(0.5) translateY(-100%);
-    }
-    60% {
-      transform: scale(1.1) translateY(0);
-    }
-    100% {
-      transform: scale(1) translateY(0);
-    }
-  }
