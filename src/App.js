@@ -34,7 +34,7 @@ function App() {
   const handleCardClick3 = () => {
     setIsFlipped3((prevIsFlipped) => !prevIsFlipped);
   };
-
+  document.title = "Victor Wellet Portfolio";
   return (
     <body>
     <div>
