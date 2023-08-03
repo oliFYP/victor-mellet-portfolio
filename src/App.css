@@ -2,7 +2,7 @@
 body {
   height: 100vh;
   width: auto;
-  background: linear-gradient(45deg, rgb(0, 0, 0), rgb(85, 85, 85));
+  background: black;
  
  
 }
@@ -10,7 +10,7 @@ body {
     max-width: 100%;
     max-height: 100%;
   font-family: Arial;
-  padding: 20px;
+  padding: 0px;
   
   align-items: center;
   justify-items: center;
@@ -37,8 +37,8 @@ body {
     flex-direction: column;
     background-color: white;
     border-radius: 20px;
-    padding: 20px;
-    margin: 20px;
+    padding: 10px;
+    margin: 10px;
 
 }
 .bdc{
