@@ -2,7 +2,7 @@
 body {
   height: 100vh;
   width: auto;
-  background: rgb(37, 37, 37);
+  background: hsl(210, 50%, 25%);
  
  
 }
@@ -35,6 +35,7 @@ body {
     display: flex;
     width: 350px;
     flex-direction: column;
+    box-shadow:  0 4px 8px rgba(0, 0, 0, 0.2);
     background-color: white;
     border-radius: 20px;
     padding: 10px;
@@ -68,7 +69,7 @@ body {
 .Birthday-icon {
     margin-top: 3px;
     margin-right: 5px;
-    color: #3a3a3a;
+    color: hsl(210, 50%, 25%);
     height: 25px;
     width: auto;
 }
@@ -128,7 +129,7 @@ body {
   height: 100%;
   width: 100%;
   border-radius: 2rem;
-  box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.25);
+  box-shadow:  0 4px 8px rgba(0, 0, 0, 0.2);
   position: absolute;
   backface-visibility: hidden;
 }
@@ -152,7 +153,7 @@ body {
 .mec-icon{
   margin-top: 3px;
   margin-right: 5px;
-  color: #3a3a3a;
+  color: hsl(210, 50%, 25%);
   height: auto;
   width: 50px;
   align-items: center;
