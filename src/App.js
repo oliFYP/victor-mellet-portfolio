@@ -1,6 +1,8 @@
 import './App.css';
 import './hover.css';
-import './mobileView.css'
+import './mobileView.css';
+import { useEffect } from 'react';
+import { motion } from 'framer-motion';
 import bdc from './image/Image.jpeg';
 import { MdLocationOn } from 'react-icons/md';
 import {FaPhone } from 'react-icons/fa';
@@ -36,6 +38,12 @@ function App() {
   };
   document.title = "Victor Wellet Portfolio";
   return (
+    <motion.div
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0 }}
+    transition={{ duration: 2 }}
+  >
     <body>
     <div>
       <div className="layout">
@@ -139,19 +147,18 @@ function App() {
     <div class="card">
       <div class="front">
       <AiOutlineBook className="mec-icon" />
-          <h1>Competences transversales</h1>
+          <h1>Competences transversales et centres d'intérêt</h1>
         </div>
      
       <div class="back">
-      <h1>B.U.T MESURES PHYSIQUES 2ÈME ANNEE (2021-2022)</h1>
-           <h2>IUT1: Grenoble</h2>
-           <li> Projet: Réalisation d'un oxymètre, conversion signal analogique/numérique, électronique, optique, traitement du signal</li>
-           <li> Projet: Réalisation complète d'une radio: autonomie, apprentissage de méthodes de soudure et de gravure chimique. Connaissance en électronique.</li>
-           <li> Encadrant plongeur universitaire sur un semestre à U-Dive.</li>
-           <h1>BACCALAUREAT GENERAL, ASSEZ-BIEN(2020)</h1>
-           <h2>Lycée d'altitude, Briançon</h2>
-           <li> Bac S spécialité maths</li>
-           <li> Préparation millitaire marine en parallèle de mon année de Terminale (2019-2020, major de promotion)</li>
+      
+           <li> Anglais: 945 sur 990 au TOEIC et bonne maitrise de l'anglais technique et courant</li>
+           <li>Travailler en équipe et/ou en autonomie</li>
+           <li> Dynamique </li>
+           <h1>Centres d'intérêt</h1>
+           <li> Parachutisme depuis juin 2020 (gestion du stress, réactivité)</li>
+           <li> Plongée sous-marine depuis 2010, niveau Master Diver (autonomie, coordination)</li>
+           <li> Boxe anglaise depuis 2017 en loisir (dépassement de soi,	motivation)</li>
       </div>
     </div>
   </div>
@@ -160,6 +167,7 @@ function App() {
       </div>
     </div>
     </body>
+    </motion.div>
   );
 }
 
