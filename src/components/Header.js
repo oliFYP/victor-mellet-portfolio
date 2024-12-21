@@ -11,7 +11,7 @@ export default function Header() {
             Victor Mellet
           </h1>
           <h2 className="text-2xl text-navy-700">
-            Étudiant en Mesures Physiques
+            Étudiant en Travaux Publics
           </h2>
           <div className="mt-6 text-navy-600 text-lg max-w-2xl leading-relaxed">
             Passionné par les sciences et la technique, je combine rigueur
