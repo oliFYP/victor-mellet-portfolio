@@ -1,17 +1,15 @@
 {
   "files": {
-    "main.css": "/victor-mellet-portfolio/static/css/main.0cabc1e8.css",
-    "main.js": "/victor-mellet-portfolio/static/js/main.6721bc1f.js",
-    "static/js/787.af81aa55.chunk.js": "/victor-mellet-portfolio/static/js/787.af81aa55.chunk.js",
-    "static/media/Image.jpeg": "/victor-mellet-portfolio/static/media/Image.1e4d1f7c1cc250f3f13f.jpeg",
-    "static/media/koulen.ttf": "/victor-mellet-portfolio/static/media/koulen.e23002c698c2632e9437.ttf",
+    "main.css": "/victor-mellet-portfolio/static/css/main.675f1e2e.css",
+    "main.js": "/victor-mellet-portfolio/static/js/main.2bec3480.js",
+    "static/js/787.cfbbb408.chunk.js": "/victor-mellet-portfolio/static/js/787.cfbbb408.chunk.js",
     "index.html": "/victor-mellet-portfolio/index.html",
-    "main.0cabc1e8.css.map": "/victor-mellet-portfolio/static/css/main.0cabc1e8.css.map",
-    "main.6721bc1f.js.map": "/victor-mellet-portfolio/static/js/main.6721bc1f.js.map",
-    "787.af81aa55.chunk.js.map": "/victor-mellet-portfolio/static/js/787.af81aa55.chunk.js.map"
+    "main.675f1e2e.css.map": "/victor-mellet-portfolio/static/css/main.675f1e2e.css.map",
+    "main.2bec3480.js.map": "/victor-mellet-portfolio/static/js/main.2bec3480.js.map",
+    "787.cfbbb408.chunk.js.map": "/victor-mellet-portfolio/static/js/787.cfbbb408.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0cabc1e8.css",
-    "static/js/main.6721bc1f.js"
+    "static/css/main.675f1e2e.css",
+    "static/js/main.2bec3480.js"
   ]
 }
