@@ -1,173 +1,119 @@
-import './App.css';
-import './hover.css';
-import './mobileView.css';
-import { useEffect } from 'react';
-import { motion } from 'framer-motion';
-import bdc from './image/Image.jpeg';
-import { MdLocationOn } from 'react-icons/md';
-import {FaPhone } from 'react-icons/fa';
-import { AiOutlineMail } from 'react-icons/ai';
-import { FaCar } from 'react-icons/fa';
-import { AiOutlineCalendar } from 'react-icons/ai';
-import { FaGraduationCap } from 'react-icons/fa';
-import { FaBriefcase } from 'react-icons/fa';
-import React, { useState } from 'react';
-import { FaCog } from 'react-icons/fa';
-import { AiOutlineBook } from 'react-icons/ai';
-
+import React from "react";
+import { GraduationCap, Briefcase, Heart, Brain } from "lucide-react";
+import Header from "./components/Header";
+import Section from "./components/Section";
+import ContactInfo from "./components/ContactInfo";
+import ExperienceCard from "./components/ExperienceCard";
+import SkillCard from "./components/SkillCard";
 
 function App() {
-  const [isFlipped, setIsFlipped] = useState(false);
-  const [isFlipped1, setIsFlipped1] = useState(false);
-  const [isFlipped2, setIsFlipped2] = useState(false);
-  const [isFlipped3, setIsFlipped3] = useState(false);
-
-  const handleCardClick = () => {
-    setIsFlipped((prevIsFlipped) => !prevIsFlipped);
-  };
-  const handleCardClick1 = () => {
-    setIsFlipped1((prevIsFlipped) => !prevIsFlipped);
-  };
-
-  const handleCardClick2 = () => {
-    setIsFlipped2((prevIsFlipped) => !prevIsFlipped);
-  };
-
-  const handleCardClick3 = () => {
-    setIsFlipped3((prevIsFlipped) => !prevIsFlipped);
-  };
-  document.title = "Victor Wellet Portfolio";
   return (
-    <motion.div
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    exit={{ opacity: 0 }}
-    transition={{ duration: 2 }}
-  >
-    <body>
-    <div>
-      <div className="layout">
+    <div className="min-h-screen bg-navy-50">
+      <Header />
 
-        <div className="Personal-info ">
-          <img src={bdc} className='bdc' draggable='false' ></img>
-          <div className="container-1">
-          <h1>Victor Mellet</h1>
-            <div className="location-container">
-              <MdLocationOn className="location-icon" />
-              
-              <p>Briancon</p>
+      <main className="container mx-auto px-4 py-8 max-w-4xl">
+        <ContactInfo />
+
+        <Section title="Formation" icon={<GraduationCap />}>
+          <ExperienceCard
+            title="ÉCOLE SPÉCIALE DES TRAVAUX PUBLICS (ESTP PARIS)"
+            place="Campus de Cachan"
+            date="2023-2025"
+            points={[
+              "Spécialité Génie Mécanique et Électrique (GME)",
+              "Projet BIM: Modélisation 3D et simulation énergétique d'un bâtiment tertiaire",
+              "Formation en management de projet et gestion d'équipe",
+              "Stage l'été 2025",
+            ]}
+            delay={50}
+          />
+          <ExperienceCard
+            title="B.U.T MESURES PHYSIQUES 2ÈME ANNEE"
+            place="IUT1: Grenoble"
+            date="2021-2022"
+            points={[
+              "Réalisation d'un oxymètre, conversion signal analogique/numérique, électronique, optique, traitement du signal",
+              "Réalisation complète d'une radio: autonomie, apprentissage de méthodes de soudure et de gravure chimique",
+              "Encadrant plongeur universitaire sur un semestre à U-Dive",
+            ]}
+            delay={100}
+          />
+          <ExperienceCard
+            title="BACCALAUREAT GENERAL, ASSEZ-BIEN"
+            place="Lycée d'altitude, Briançon"
+            date="2020"
+            points={[
+              "Bac S spécialité maths",
+              "Préparation millitaire marine (2019-2020, major de promotion)",
+            ]}
+            delay={200}
+          />
+        </Section>
+
+        <Section title="Expérience Professionnelle" icon={<Briefcase />}>
+          <ExperienceCard
+            title="STAGE TECHNIQUE AU CEA"
+            place="CEA liten Grenoble laboratoire LCA"
+            date="16 JANVIER-31 MARS 2023"
+            points={[
+              "Étude de microstructure sur tubes inox",
+              "Attaques chimiques",
+              "Test d'étanchéité",
+            ]}
+            delay={300}
+          />
+          <ExperienceCard
+            title="RÉSERVISTE DE LA MARINE NATIONALE"
+            place="Base navale de Toulon"
+            date="EN COURS"
+            points={[
+              "Opérateur défense : surveiller et filtrer les sites sensibles militaires à pied ou véhiculé",
+            ]}
+            delay={400}
+          />
+        </Section>
+
+        <div className="grid md:grid-cols-2 gap-6 mt-8">
+          <Section title="Compétences Techniques" icon={<Brain />}>
+            <div className="grid grid-cols-1 gap-4">
+              <SkillCard title="Électronique" level={4} delay={500} />
+              <SkillCard title="Optique" level={4} delay={600} />
+              <SkillCard title="Pack Office & LabVIEW" level={4} delay={700} />
+              <SkillCard title="Python" level={3} delay={800} />
+              <SkillCard
+                title="Anglais"
+                level={5}
+                description="945/990 TOEIC"
+                delay={900}
+              />
             </div>
-            <div className="phone-container">
-              <FaPhone className="Phone-icon" />
-              <p>06.25.43.53.12</p>
+          </Section>
+
+          <Section title="Centres d'Intérêt" icon={<Heart />}>
+            <div className="space-y-4">
+              <SkillCard
+                title="Parachutisme"
+                level={4}
+                description="Depuis juin 2020"
+                delay={1000}
+              />
+              <SkillCard
+                title="Plongée sous-marine"
+                level={5}
+                description="Depuis 2010, Master Diver"
+                delay={1100}
+              />
+              <SkillCard
+                title="Boxe anglaise"
+                level={3}
+                description="Depuis 2017"
+                delay={1200}
+              />
             </div>
-            <div className="email-container">
-              <AiOutlineMail className="Email-icon" />
-              <p>melletvictor@gmail.com</p>
-            </div>
-            <div className="car-container">
-              <FaCar className="Car-icon" />
-              <p>Permis B (véhiculé)</p>
-            </div>
-            <div className="Birthday-container">
-              <AiOutlineCalendar className="Birthday-icon" />
-              <p>07/06/2002</p>
-            </div>
-          </div>
-          
+          </Section>
         </div>
-        
-        <div className= "grad-container" >
-        <div className={`container ${isFlipped ? 'flipped' : ''}`} onClick={handleCardClick}>
-    <div class="card">
-      <div class="front">
-      <FaGraduationCap className="mec-icon" />
-          <h1>Parcours scolaire</h1>
-        </div>
-     
-      <div class="back">
-      <h1>B.U.T MESURES PHYSIQUES 2ÈME ANNEE (2021-2022)</h1>
-           <h2>IUT1: Grenoble</h2>
-           <li> Projet: Réalisation d'un oxymètre, conversion signal analogique/numérique, électronique, optique, traitement du signal</li>
-           <li> Projet: Réalisation complète d'une radio: autonomie, apprentissage de méthodes de soudure et de gravure chimique. Connaissance en électronique.</li>
-           <li> Encadrant plongeur universitaire sur un semestre à U-Dive.</li>
-           <h1>BACCALAUREAT GENERAL, ASSEZ-BIEN(2020)</h1>
-           <h2>Lycée d'altitude, Briançon</h2>
-           <li> Bac S spécialité maths</li>
-           <li> Préparation millitaire marine en parallèle de mon année de Terminale (2019-2020, major de promotion)</li>
-      </div>
+      </main>
     </div>
-  </div>
-  <div className={`container1 ${isFlipped1 ? 'flipped' : ''}`} onClick={handleCardClick1}>
-    <div class="card">
-      <div class="front">
-      <FaBriefcase className="mec-icon" />
-          <h1>Expérience Professionelle</h1>
-        </div>
-     
-      <div class="back">
-      <h1>STAGE TECHNIQUE AU CEA 11 SEMAINES (16 JANVIER-31 MARS 2023)</h1>
-           <h2>CEA liten Grenoble laboratoire LCA</h2>
-        
-           <p>Dans le cadre de mon IUT Mesures Physique: étude de microstructure sur tubes inox,
-             attaques chimiques, test d'étanchéité.</p>
-             <h1>RÉSERVISTE DE LA MARINE NATIONALE(EN COURS)</h1>
-             <h2>Base navale de Toulon</h2>
-             <p>Opérateur défense : surveiller et filtrer les sites 
-              sensibles militaires à pied ou véhiculé.</p>
-              <h1>AIDE-PEINTRE CDD JUILLET (2021)</h1>
-              <h2>Ferrero peinture, Briançon</h2>
-              <p>Poncer, peindre et véhiculer la manœuvre pendant 
-                1 mois sur chantier.</p>
-      </div>
-    </div>
-  </div>
-        
-        </div>
-        <div className="mech">
-        <div className={`container2 ${isFlipped2 ? 'flipped' : ''}`} onClick={handleCardClick2}>
-    <div class="card">
-      <div class="front">
-      <FaCog className="mec-icon" />
-          <h1>Competences Scientifiques et techniques</h1>
-        </div>
-     
-      <div class="back">
-      
-           <li> Connaissances solides en électronique de base</li>
-           <li> Connaissances solides en optique de base et manipulation.</li>
-           <li> Traitement des données issu de manipulations expérimentales (Pack Office, LabVIEW...)</li>
-           <li> Mettre en œuvre des réactions physico-chimiques dans le cadre d'une étude d'un produit</li>
-           <li> Manipulation de base en informatique (Python)</li>
-           <li> Réalisation d'une mesure à l'aide d'une chaîne de mesure et d'une méthode adaptée</li>
-      </div>
-    </div>
-  </div>
-  <div className={`container3 ${isFlipped3 ? 'flipped' : ''}`} onClick={handleCardClick3}>
-    <div class="card">
-      <div class="front">
-      <AiOutlineBook className="mec-icon" />
-          <h1>Competences transversales et centres d'intérêt</h1>
-        </div>
-     
-      <div class="back">
-      
-           <li> Anglais: 945 sur 990 au TOEIC et bonne maitrise de l'anglais technique et courant</li>
-           <li>Travailler en équipe et/ou en autonomie</li>
-           <li> Dynamique </li>
-           <h1>Centres d'intérêt</h1>
-           <li> Parachutisme depuis juin 2020 (gestion du stress, réactivité)</li>
-           <li> Plongée sous-marine depuis 2010, niveau Master Diver (autonomie, coordination)</li>
-           <li> Boxe anglaise depuis 2017 en loisir (dépassement de soi,	motivation)</li>
-      </div>
-    </div>
-  </div>
-        </div>
-        
-      </div>
-    </div>
-    </body>
-    </motion.div>
   );
 }
 
